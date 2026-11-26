@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5000";
+const API_URL =
+  import.meta.env.VITE_SERVER_URL || "http://localhost:5000";
 
 function Home() {
   const [username, setUsername] = useState("");
@@ -91,7 +92,6 @@ function Home() {
         }}
       >
         <h1>YouTube Watch Party</h1>
-
         <p>Watch YouTube videos together in real time.</p>
 
         <input

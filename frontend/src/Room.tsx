@@ -66,11 +66,11 @@ function Room() {
   const [message, setMessage] = useState("Connecting...");
   const [chatInput, setChatInput] = useState("");
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
-  const [roomState, setRoomState] = useState<RoomState>({
-    videoId: null,
-    playState: "paused",
-    currentTime: 0,
-  });
+  const [, setRoomState] = useState<RoomState>({
+  videoId: null,
+  playState: "paused",
+  currentTime: 0,
+});
 
   const isHost = myRole === "Host";
   const canControl = isHost || myRole === "Moderator";
