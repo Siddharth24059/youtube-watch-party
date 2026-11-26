@@ -75,24 +75,68 @@ function Home() {
     <div
       style={{
         minHeight: "100vh",
+        boxSizing: "border-box",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        background: "#111827",
+        padding: "30px 16px",
+        background:
+          "radial-gradient(circle at top, #263449 0%, #111827 55%, #080d18 100%)",
         color: "white",
-        fontFamily: "Arial",
+        fontFamily: "Arial, sans-serif",
       }}
     >
       <div
         style={{
-          width: "350px",
-          padding: "30px",
+          width: "100%",
+          maxWidth: "420px",
+          boxSizing: "border-box",
+          padding: "40px 32px",
           background: "#1f2937",
-          borderRadius: "12px",
+          border: "1px solid #374151",
+          borderRadius: "20px",
+          boxShadow: "0 20px 50px rgba(0,0,0,0.35)",
         }}
       >
-        <h1>YouTube Watch Party</h1>
-        <p>Watch YouTube videos together in real time.</p>
+        <div style={{ textAlign: "center", marginBottom: "32px" }}>
+          <div style={{ fontSize: "38px", marginBottom: "16px" }}>
+            ▶️
+          </div>
+
+          <h1
+            style={{
+              fontSize: "30px",
+              lineHeight: 1.3,
+              margin: "0 0 14px",
+              fontWeight: 700,
+              letterSpacing: "-0.8px",
+            }}
+          >
+            YouTube Watch Party
+          </h1>
+
+          <p
+            style={{
+              color: "#9ca3af",
+              fontSize: "14px",
+              lineHeight: 1.6,
+              margin: 0,
+            }}
+          >
+            Watch YouTube videos together in real time.
+          </p>
+        </div>
+
+        <label
+          style={{
+            display: "block",
+            marginBottom: "9px",
+            fontSize: "14px",
+            color: "#e5e7eb",
+          }}
+        >
+          Your Username
+        </label>
 
         <input
           placeholder="Enter your username"
@@ -100,9 +144,15 @@ function Home() {
           onChange={(e) => setUsername(e.target.value)}
           style={{
             width: "100%",
-            padding: "12px",
-            marginBottom: "15px",
             boxSizing: "border-box",
+            padding: "14px",
+            marginBottom: "18px",
+            borderRadius: "9px",
+            border: "1px solid #4b5563",
+            background: "#111827",
+            color: "white",
+            fontSize: "14px",
+            outline: "none",
           }}
         />
 
@@ -111,15 +161,33 @@ function Home() {
           disabled={loading}
           style={{
             width: "100%",
-            padding: "12px",
-            marginBottom: "20px",
-            cursor: "pointer",
+            padding: "14px",
+            border: "none",
+            borderRadius: "9px",
+            background: loading ? "#4b5563" : "#dc2626",
+            color: "white",
+            fontSize: "15px",
+            fontWeight: 600,
+            cursor: loading ? "not-allowed" : "pointer",
           }}
         >
           {loading ? "Creating..." : "Create Watch Party"}
         </button>
 
-        <hr />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+            margin: "26px 0",
+            color: "#9ca3af",
+            fontSize: "12px",
+          }}
+        >
+          <div style={{ flex: 1, height: "1px", background: "#4b5563" }} />
+          OR JOIN EXISTING ROOM
+          <div style={{ flex: 1, height: "1px", background: "#4b5563" }} />
+        </div>
 
         <input
           placeholder="Enter Room Code"
@@ -127,10 +195,15 @@ function Home() {
           onChange={(e) => setRoomId(e.target.value)}
           style={{
             width: "100%",
-            padding: "12px",
-            marginTop: "15px",
-            marginBottom: "15px",
             boxSizing: "border-box",
+            padding: "14px",
+            marginBottom: "14px",
+            borderRadius: "9px",
+            border: "1px solid #4b5563",
+            background: "#111827",
+            color: "white",
+            fontSize: "14px",
+            outline: "none",
           }}
         />
 
@@ -138,7 +211,13 @@ function Home() {
           onClick={joinRoom}
           style={{
             width: "100%",
-            padding: "12px",
+            padding: "14px",
+            border: "1px solid #4b5563",
+            borderRadius: "9px",
+            background: "#374151",
+            color: "white",
+            fontSize: "15px",
+            fontWeight: 600,
             cursor: "pointer",
           }}
         >
